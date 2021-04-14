@@ -1,5 +1,5 @@
 /src/jvmTest/resources/issue.json
-/secure-json-dsl.gradle
 /build/
-/.gradle/
 /.idea/
+/.gradle/
+/secure-json-dsl.gradle
