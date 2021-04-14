@@ -2,17 +2,41 @@
 ## in pure kotlin v1.4.32
 ##  [based on Eclipse JSON Parser for Java](https://eclipsesource.com/blogs/2013/04/18/minimal-json-parser-for-java)
 
-Throw exception only if
+Speed is not great but enough for parsing json by specification, dynamically changing in time.  
+
+##### Throw exception only if
 * json syntax error
 * cast between primitives is in some cases impossible
+
+##### Library is currently generated for
+* jvm
+* js
+* linux64
+
+If you need another platform,
+no problem, 
+let me known :)
+
 
 ![https://mallumo.jfrog.io/artifactory/gradle-dev-local/tk/mallumo/json-dsl/](https://img.shields.io/maven-metadata/v?color=%234caf50&metadataUrl=https%3A%2F%2Fmallumo.jfrog.io%2Fartifactory%2Fgradle-dev-local%2Ftk%2Fmallumo%2Fjson-dsl%2Fmaven-metadata.xml&style=for-the-badge "Version")
 
 ```groovy
+dependencies {
+    implementation("tk.mallumo:json-dsl:+")
+}
+```
+```groovy
+//build.gradle
 repositories {
     maven {
         url = uri("https://mallumo.jfrog.io/artifactory/gradle-dev-local")
     }
+}
+```
+```groovy
+//build.gradle.kts
+repositories {
+     maven("https://mallumo.jfrog.io/artifactory/gradle-dev-local")
 }
 ```
 
