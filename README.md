@@ -1,11 +1,11 @@
 ### Json deserializer 
-## in pure kotlin
+## in pure kotlin v1.4.32
 ##  [based on Eclipse JSON Parser for Java](https://eclipsesource.com/blogs/2013/04/18/minimal-json-parser-for-java)
 
-**core logic + preview is in test cases**
+Throw exception only if
+* json syntax error
+* cast between primitives is in some cases impossible
 
-
-##### KOTLIN v1.4.32
 ![https://mallumo.jfrog.io/artifactory/gradle-dev-local/tk/mallumo/json-dsl/](https://img.shields.io/maven-metadata/v?color=%234caf50&metadataUrl=https%3A%2F%2Fmallumo.jfrog.io%2Fartifactory%2Fgradle-dev-local%2Ftk%2Fmallumo%2Fjson-dsl%2Fmaven-metadata.xml&style=for-the-badge "Version")
 
 ```groovy
@@ -15,6 +15,9 @@ repositories {
     }
 }
 ```
+
+**core logic + preview is in test cases**
+
 ### simple preview:
 
 ```kotlin
@@ -39,9 +42,7 @@ val resp: ItemHolder = JsonDsl.decodeObject(jsonObject) {
     ItemHolder(
         item = this["item"] ?: -1,
         str = this["str"] ?: "",
-        arrx = jList("arrx") {
-            this.int() ?: -1
-        }
+        arrx = jList("arrx") { int() ?: -1 }
     )
 }
 ```
