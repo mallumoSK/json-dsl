@@ -4,6 +4,17 @@
 
 **core logic + preview is in test cases**
 
+
+##### KOTLIN v1.4.32
+![https://mallumo.jfrog.io/artifactory/gradle-dev-local/tk/mallumo/json-dsl/](https://img.shields.io/maven-metadata/v?color=%234caf50&metadataUrl=https%3A%2F%2Fmallumo.jfrog.io%2Fartifactory%2Fgradle-dev-local%2Ftk%2Fmallumo%2Fjson-dsl%2Fmaven-metadata.xml&style=for-the-badge "Version")
+
+```groovy
+repositories {
+    maven {
+        url = uri("https://mallumo.jfrog.io/artifactory/gradle-dev-local")
+    }
+}
+```
 ### simple preview:
 
 ```kotlin
